@@ -45,7 +45,9 @@ const DualSenseInputTest = () => {
         R1,
 
         share,
-        options
+        options,
+
+        controllerConntected
     } = useDualSenseInputContext();
 
     const directionalButtonsOffset = useMemo(() => {
@@ -97,42 +99,45 @@ const DualSenseInputTest = () => {
 
     return(<div className={Styles.ComponentFrame}>
         <div className={Styles.DualSenseInputTestFrame}>
-            <BodyFront className={`${Styles.BodyFrontAppearance}`}/>
-            <div className={`${Styles.AlignDirectionalButtons}`} style={directionalButtonsOffset}>
-                <DirectionLeft className={`${Styles.DirectionLeftAppearance} ${directionLeft ? Styles.Active : null}`}/>
-                <DirectionDown className={`${Styles.DirectionDownAppearance} ${directionDown ? Styles.Active : null}`}/>
-                <DirectionRight className={`${Styles.DirectionRightAppearance} ${directionRight ? Styles.Active : null}`}/>
-                <DirectionUp className={`${Styles.DirectionUpAppearance} ${directionUp ? Styles.Active : null}`}/>
-            </div>
+            {controllerConntected ? (<>
 
-            <div className={`${Styles.AlignActionButtons}`}>
-                <Square className={`${Styles.SquareAppearance} ${square? Styles.SquareActive : null}`}/>
-                <Cross className={`${Styles.CrossAppearance} ${cross? Styles.CrossActive : null}`}/>
-                <Circle className={`${Styles.CircleAppearance} ${circle? Styles.CircleActive : null}`}/>
-                <Triangle className={`${Styles.TriangleAppearance} ${triangle? Styles.TriangleActive : null}`}/>
-            </div>
+                <BodyFront className={`${Styles.BodyFrontAppearance}`}/>
+                <div className={`${Styles.AlignDirectionalButtons}`} style={directionalButtonsOffset}>
+                    <DirectionLeft className={`${Styles.DirectionLeftAppearance} ${directionLeft ? Styles.Active : null}`}/>
+                    <DirectionDown className={`${Styles.DirectionDownAppearance} ${directionDown ? Styles.Active : null}`}/>
+                    <DirectionRight className={`${Styles.DirectionRightAppearance} ${directionRight ? Styles.Active : null}`}/>
+                    <DirectionUp className={`${Styles.DirectionUpAppearance} ${directionUp ? Styles.Active : null}`}/>
+                </div>
 
-            <div className={`${Styles.AlignL3Front}`}>
-                <L3Front className={`${Styles.L3FrontAppearance} ${L3 || leftStickDeadZone ? Styles.Active : null}`} style={L3FrontPosition} />
-            </div>
-            <div className={`${Styles.AlignR3Front}`}>
-                <R3Front className={`${Styles.R3FrontAppearance} ${R3 || rightStickDeadZone ? Styles.Active : null}`} style={R3FrontPosition} />
-            </div>
+                <div className={`${Styles.AlignActionButtons}`}>
+                    <Square className={`${Styles.SquareAppearance} ${square? Styles.SquareActive : null}`}/>
+                    <Cross className={`${Styles.CrossAppearance} ${cross? Styles.CrossActive : null}`}/>
+                    <Circle className={`${Styles.CircleAppearance} ${circle? Styles.CircleActive : null}`}/>
+                    <Triangle className={`${Styles.TriangleAppearance} ${triangle? Styles.TriangleActive : null}`}/>
+                </div>
 
-            <div className={`${Styles.AlignL1Front}`}>
-                <L1Front className={`${Styles.L1FrontAppearance} ${L1 ? Styles.L1FrontActive : null}`}/>
-            </div>
-            <div className={`${Styles.AlignR1Front}`}>
-                <R1Front className={`${Styles.R1FrontAppearance} ${R1 ? Styles.R1FrontActive : null}`}/>
-            </div>
+                <div className={`${Styles.AlignL3Front}`}>
+                    <L3Front className={`${Styles.L3FrontAppearance} ${L3 || leftStickDeadZone ? Styles.Active : null}`} style={L3FrontPosition} />
+                </div>
+                <div className={`${Styles.AlignR3Front}`}>
+                    <R3Front className={`${Styles.R3FrontAppearance} ${R3 || rightStickDeadZone ? Styles.Active : null}`} style={R3FrontPosition} />
+                </div>
 
-            <div className={`${Styles.AlignShare}`}>
-                <Share className={`${Styles.ShareAppearance} ${share ? Styles.Active : null}`}/>
-            </div>
-            <div className={`${Styles.AlignOptions}`}>
-                <Options className={`${Styles.OptionsAppearance} ${options ? Styles.Active : null}`}/>
-            </div>
+                <div className={`${Styles.AlignL1Front}`}>
+                    <L1Front className={`${Styles.L1FrontAppearance} ${L1 ? Styles.L1FrontActive : null}`}/>
+                </div>
+                <div className={`${Styles.AlignR1Front}`}>
+                    <R1Front className={`${Styles.R1FrontAppearance} ${R1 ? Styles.R1FrontActive : null}`}/>
+                </div>
 
+                <div className={`${Styles.AlignShare}`}>
+                    <Share className={`${Styles.ShareAppearance} ${share ? Styles.Active : null}`}/>
+                </div>
+                <div className={`${Styles.AlignOptions}`}>
+                    <Options className={`${Styles.OptionsAppearance} ${options ? Styles.Active : null}`}/>
+                </div>
+
+            </>) : null }
         </div>
     </div>)
 }

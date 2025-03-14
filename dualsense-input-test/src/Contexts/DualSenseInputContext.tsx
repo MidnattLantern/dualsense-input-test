@@ -100,13 +100,11 @@ const DualSenseInputProvider: React.FC<DualSenseInputProviderProps> = ({ childre
       const [controllerConntected, setControllerConnected] = useState<boolean>(false);
       const [controllerID, setControllerID] = useState<string>("Not connected");
       //
-//      const [showTable, setShowTable] = useState<boolean>(false);
       const [verified, setVerified] = useState<boolean>(false);
 
         const verifyController = useCallback(() => {
             if (controllerID.includes("DualSense") || controllerID.includes("DUALSHOCK")) {
                 setVerified(true);
-//                setShowTable(true);
             } else {
                 setVerified(false);
             }
@@ -228,7 +226,6 @@ const DualSenseInputProvider: React.FC<DualSenseInputProviderProps> = ({ childre
             controllerConntected, setControllerConnected,
             controllerID, setControllerID,
 
-//            showTable, setShowTable,
             verified, setVerified
         }}>
             {children}

@@ -1,0 +1,8 @@
+.LinkAppearance {
+    color: var(--theme);
+    text-decoration: none;
+}
+.LinkAppearance:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
