@@ -28,7 +28,7 @@ Deploy by running the following in terminal:
 npm run deploy
 ```
 
-Like link: `https://midnattlantern.github.io/dualsense-input-test/`
+Live link: `https://midnattlantern.github.io/dualsense-input-test/`
 
 
 
@@ -61,4 +61,9 @@ declare module '*.svg' {
     const ReactComponent: FC<SVGProps<SVGSVGElement>>;
     export default ReactComponent;
   }
+```
+
+The project is veriied for Chrome and Safari, to display warning messages for unverified browsers, the project first need to be able to detect the users browser via the following npm package: https://www.npmjs.com/package/detect-browser
+```zsh
+npm install detect-browser
 ```
