@@ -56,6 +56,8 @@ const DualSenseInputTest = () => {
         controllerConntected
     } = useDualSenseInputContext();
 
+    const [rotation, setRotation] = useState({ x: 0, y: 0 });
+
     const directionalButtonsOffset = useMemo(() => {
         return {
             left: directionLeft ? -2 : directionRight ? 2 : 0,
@@ -103,6 +105,14 @@ const DualSenseInputTest = () => {
         }
     }, [leftStickX, leftStickY, rightStickX, rightStickY])
 
+    useEffect(() => {
+        if (L2 || R2) {
+            setRotation({ x: -90, y: 0 })
+        } else {
+            setRotation({ x: 0, y: 0 })
+        }
+    }, [L2, R2])
+
     const DisplayFront = () => {
         return(<>
                 <BodyFront className={`${Styles.BodyFrontAppearance}`}/>
@@ -146,10 +156,18 @@ const DualSenseInputTest = () => {
     const DisplayShoulder = () => {
         return(<>
             <BodyShoulder className={`${Styles.BodyShoulderAppearance}`}/>
-            <L1Shoulder className={`${Styles.ShoulderButtonAppearance} ${L1 ? Styles.ShoulderButtonActive : null}`}/>
-            <R1Shoulder className={`${Styles.ShoulderButtonAppearance} ${R1 ? Styles.ShoulderButtonActive : null}`}/>
-            <L2Shoulder className={`${Styles.ShoulderButtonAppearance} ${L2 ? Styles.ShoulderButtonActive : null}`}/>
-            <R2Shoulder className={`${Styles.ShoulderButtonAppearance} ${R2 ? Styles.ShoulderButtonActive : null}`}/>
+            <div className={`${Styles.AlignShoulderButton}`}>
+                <L1Shoulder className={`${Styles.ShoulderButtonAppearance} ${L1 ? Styles.ShoulderButtonActive : null}`}/>
+            </div>
+            <div className={`${Styles.AlignShoulderButton}`}>
+                <R1Shoulder className={`${Styles.ShoulderButtonAppearance} ${R1 ? Styles.ShoulderButtonActive : null}`}/>
+            </div>
+            <div className={`${Styles.AlignShoulderButton}`}>
+                <L2Shoulder className={`${Styles.ShoulderButtonAppearance} ${L2 ? Styles.ShoulderButtonActive : null}`}/>
+            </div>
+            <div className={`${Styles.AlignShoulderButton}`}>
+                <R2Shoulder className={`${Styles.ShoulderButtonAppearance} ${R2 ? Styles.ShoulderButtonActive : null}`}/>
+            </div>
         </>)
     };
 
@@ -157,12 +175,15 @@ const DualSenseInputTest = () => {
         <div className={Styles.DualSenseInputTestFrame}>
             {controllerConntected ? (<>
 
-                { L2 || R2 ? (
-                <DisplayShoulder />
-                ) : (
-                <DisplayFront />
-                )}
-
+                <div className={Styles.CubeVessel} style={{ transform: `rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`, }}>
+                    <div className={`${Styles.Cube} ${Styles.Front}`}>
+                        <DisplayFront />
+                    </div>
+                    <div className={`${Styles.Cube} ${Styles.Top}`}>
+                        <DisplayShoulder/>
+                    </div>
+                </div>
+                        
             </>) : null }
         </div>
     </div>)

@@ -13,7 +13,7 @@ const HeaderComponent = () => {
     const DisplayControllerVerification = () => {
         return(<>
             {verified ?
-            ( <p className={Styles.VerificationAppearance}>✅ Connected: {controllerID}</p> ):
+            ( <p className={Styles.VerificationAppearance}>✅ {controllerID}</p> ):
             ( <p className={Styles.VerificationAppearance}>⚠️ {controllerID} is not verified and might cause unexpected behaviours</p> )}
         </>)
     };
