@@ -2,6 +2,7 @@ import Styles from "./DualSenseInputTest.module.css";
 import { useEffect, useMemo, useState } from "react";
 import { useDualSenseInputContext } from "../../Contexts/useDualSenseInputContext";
 import BodyFront from "../../assets/DualSense/Body/BodyFront.svg?react";
+import BodyShoulder from "../../Assets/DualSense/Body/BodyShoulder.svg?react";
 
 import DirectionLeft from "../../assets/DualSense/Front/DirectionLeft.svg?react";
 import DirectionDown from "../../assets/DualSense/Front/DirectionDown.svg?react";
@@ -17,6 +18,10 @@ import L3Front from "../../assets/DualSense/Front/L3Front.svg?react";
 import R3Front from "../../assets/DualSense/Front/R3Front.svg?react";
 import L1Front from "../../assets/DualSense/Front/L1Front.svg?react";
 import R1Front from "../../assets/DualSense/Front/R1Front.svg?react";
+import L1Shoulder from "../../Assets/DualSense/Shoulders/L1Shoulder.svg?react"
+import R1Shoulder from "../../Assets/DualSense/Shoulders/R1Shoulder.svg?react"
+import L2Shoulder from "../../Assets/DualSense/Shoulders/L2.svg?react"
+import R2Shoulder from "../../Assets/DualSense/Shoulders/R2.svg?react"
 
 import Share from "../../assets/DualSense/Front/Share.svg?react";
 import Options from "../../assets/DualSense/Front/Options.svg?react";
@@ -33,6 +38,10 @@ const DualSenseInputTest = () => {
         circle,
         triangle,
 
+        L1,
+        R1,
+        L2,
+        R2,
         L3,
         R3,
 
@@ -40,9 +49,6 @@ const DualSenseInputTest = () => {
         leftStickY,
         rightStickX,
         rightStickY,
-
-        L1,
-        R1,
 
         share,
         options,
@@ -97,10 +103,8 @@ const DualSenseInputTest = () => {
         }
     }, [leftStickX, leftStickY, rightStickX, rightStickY])
 
-    return(<div className={Styles.ComponentFrame}>
-        <div className={Styles.DualSenseInputTestFrame}>
-            {controllerConntected ? (<>
-
+    const DisplayFront = () => {
+        return(<>
                 <BodyFront className={`${Styles.BodyFrontAppearance}`}/>
                 <div className={`${Styles.AlignDirectionalButtons}`} style={directionalButtonsOffset}>
                     <DirectionLeft className={`${Styles.DirectionLeftAppearance} ${directionLeft ? Styles.Active : null}`}/>
@@ -136,6 +140,28 @@ const DualSenseInputTest = () => {
                 <div className={`${Styles.AlignOptions}`}>
                     <Options className={`${Styles.OptionsAppearance} ${options ? Styles.Active : null}`}/>
                 </div>
+        </>)
+    };
+
+    const DisplayShoulder = () => {
+        return(<>
+            <BodyShoulder className={`${Styles.BodyShoulderAppearance}`}/>
+            <L1Shoulder className={`${Styles.ShoulderButtonAppearance} ${L1 ? Styles.ShoulderButtonActive : null}`}/>
+            <R1Shoulder className={`${Styles.ShoulderButtonAppearance} ${R1 ? Styles.ShoulderButtonActive : null}`}/>
+            <L2Shoulder className={`${Styles.ShoulderButtonAppearance} ${L2 ? Styles.ShoulderButtonActive : null}`}/>
+            <R2Shoulder className={`${Styles.ShoulderButtonAppearance} ${R2 ? Styles.ShoulderButtonActive : null}`}/>
+        </>)
+    };
+
+    return(<div className={Styles.ComponentFrame}>
+        <div className={Styles.DualSenseInputTestFrame}>
+            {controllerConntected ? (<>
+
+                { L2 || R2 ? (
+                <DisplayShoulder />
+                ) : (
+                <DisplayFront />
+                )}
 
             </>) : null }
         </div>
