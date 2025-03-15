@@ -67,3 +67,7 @@ The project is veriied for Chrome and Safari, to display warning messages for un
 ```zsh
 npm install detect-browser
 ```
+
+Assets
+- Graphical components that resembles the DualSense was made by Alma using a vector-based editing software (Affinity 2)
+- The wallpaper is taken from the following resource: https://wallpaper.dog/black-abstract-desktop-wallpapers#google_vignette 

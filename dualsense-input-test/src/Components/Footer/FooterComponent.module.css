@@ -1,6 +1,11 @@
+.FooterComponent {
+    width: 100%;
+    padding-top: 15px;
+}
 .LinkAppearance {
     color: var(--theme);
     text-decoration: none;
+    margin: 10px;
 }
 .LinkAppearance:hover {
     text-decoration: underline;
