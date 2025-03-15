@@ -115,58 +115,58 @@ const DualSenseInputTest = () => {
 
     const DisplayFront = () => {
         return(<>
-                <BodyFront className={`${Styles.BodyFrontAppearance}`}/>
-                <div className={`${Styles.AlignDirectionalButtons}`} style={directionalButtonsOffset}>
-                    <DirectionLeft className={`${Styles.DirectionLeftAppearance} ${directionLeft ? Styles.Active : null}`}/>
-                    <DirectionDown className={`${Styles.DirectionDownAppearance} ${directionDown ? Styles.Active : null}`}/>
-                    <DirectionRight className={`${Styles.DirectionRightAppearance} ${directionRight ? Styles.Active : null}`}/>
-                    <DirectionUp className={`${Styles.DirectionUpAppearance} ${directionUp ? Styles.Active : null}`}/>
-                </div>
+            <BodyFront className={`${Styles.BodyAppearance}`}/>
+            <div className={`${Styles.AlignButton}`} style={directionalButtonsOffset}>
+                <DirectionLeft className={`${Styles.ButtonAppearance} ${directionLeft ? Styles.Active : null}`}/>
+                <DirectionDown className={`${Styles.ButtonAppearance} ${directionDown ? Styles.Active : null}`}/>
+                <DirectionRight className={`${Styles.ButtonAppearance} ${directionRight ? Styles.Active : null}`}/>
+                <DirectionUp className={`${Styles.ButtonAppearance} ${directionUp ? Styles.Active : null}`}/>
+            </div>
 
-                <div className={`${Styles.AlignActionButtons}`}>
-                    <Square className={`${Styles.SquareAppearance} ${square? Styles.SquareActive : null}`}/>
-                    <Cross className={`${Styles.CrossAppearance} ${cross? Styles.CrossActive : null}`}/>
-                    <Circle className={`${Styles.CircleAppearance} ${circle? Styles.CircleActive : null}`}/>
-                    <Triangle className={`${Styles.TriangleAppearance} ${triangle? Styles.TriangleActive : null}`}/>
-                </div>
+            <div className={`${Styles.AlignButton}`}>
+                <Square className={`${Styles.ButtonAppearance} ${square? Styles.ActionActive : null}`}/>
+                <Cross className={`${Styles.ButtonAppearance} ${cross? Styles.ActionActive : null}`}/>
+                <Circle className={`${Styles.ButtonAppearance} ${circle? Styles.ActionActive : null}`}/>
+                <Triangle className={`${Styles.ButtonAppearance} ${triangle? Styles.ActionActive : null}`}/>
+            </div>
 
-                <div className={`${Styles.AlignL3Front}`}>
-                    <L3Front className={`${Styles.L3FrontAppearance} ${L3 || leftStickDeadZone ? Styles.Active : null}`} style={L3FrontPosition} />
-                </div>
-                <div className={`${Styles.AlignR3Front}`}>
-                    <R3Front className={`${Styles.R3FrontAppearance} ${R3 || rightStickDeadZone ? Styles.Active : null}`} style={R3FrontPosition} />
-                </div>
+            <div className={`${Styles.AlignLR3}`}>
+                <L3Front className={`${Styles.LR3Appearance} ${L3 || leftStickDeadZone ? Styles.Active : null}`} style={L3FrontPosition} />
+            </div>
+            <div className={`${Styles.AlignLR3}`}>
+                <R3Front className={`${Styles.LR3Appearance} ${R3 || rightStickDeadZone ? Styles.Active : null}`} style={R3FrontPosition} />
+            </div>
 
-                <div className={`${Styles.AlignL1Front}`}>
-                    <L1Front className={`${Styles.L1FrontAppearance} ${L1 ? Styles.L1FrontActive : null}`}/>
-                </div>
-                <div className={`${Styles.AlignR1Front}`}>
-                    <R1Front className={`${Styles.R1FrontAppearance} ${R1 ? Styles.R1FrontActive : null}`}/>
-                </div>
+            <div className={`${Styles.AlignButton}`}>
+                <L1Front className={`${Styles.ButtonAppearance} ${L1 ? Styles.LR1FrontActive : null}`}/>
+            </div>
+            <div className={`${Styles.AlignButton}`}>
+                <R1Front className={`${Styles.ButtonAppearance} ${R1 ? Styles.LR1FrontActive : null}`}/>
+            </div>
 
-                <div className={`${Styles.AlignShare}`}>
-                    <Share className={`${Styles.ShareAppearance} ${share ? Styles.Active : null}`}/>
-                </div>
-                <div className={`${Styles.AlignOptions}`}>
-                    <Options className={`${Styles.OptionsAppearance} ${options ? Styles.Active : null}`}/>
-                </div>
+            <div className={`${Styles.AlignButton}`}>
+                <Share className={`${Styles.ButtonAppearance} ${share ? Styles.Active : null}`}/>
+            </div>
+            <div className={`${Styles.AlignButton}`}>
+                <Options className={`${Styles.ButtonAppearance} ${options ? Styles.Active : null}`}/>
+            </div>
         </>)
     };
 
     const DisplayShoulder = () => {
         return(<>
-            <BodyShoulder className={`${Styles.BodyShoulderAppearance}`}/>
+            <BodyShoulder className={`${Styles.BodyAppearance}`}/>
             <div className={`${Styles.AlignShoulderButton}`}>
-                <L1Shoulder className={`${Styles.ShoulderButtonAppearance} ${L1 ? Styles.ShoulderButtonActive : null}`}/>
+                <L1Shoulder className={`${Styles.ShoulderButtonAppearance} ${L1 ? Styles.Active : null}`}/>
             </div>
             <div className={`${Styles.AlignShoulderButton}`}>
-                <R1Shoulder className={`${Styles.ShoulderButtonAppearance} ${R1 ? Styles.ShoulderButtonActive : null}`}/>
+                <R1Shoulder className={`${Styles.ShoulderButtonAppearance} ${R1 ? Styles.Active : null}`}/>
             </div>
             <div className={`${Styles.AlignShoulderButton}`}>
-                <L2Shoulder className={`${Styles.ShoulderButtonAppearance} ${L2 ? Styles.ShoulderButtonActive : null}`}/>
+                <L2Shoulder className={`${Styles.ShoulderButtonAppearance} ${L2 ? Styles.Active : null}`}/>
             </div>
             <div className={`${Styles.AlignShoulderButton}`}>
-                <R2Shoulder className={`${Styles.ShoulderButtonAppearance} ${R2 ? Styles.ShoulderButtonActive : null}`}/>
+                <R2Shoulder className={`${Styles.ShoulderButtonAppearance} ${R2 ? Styles.Active : null}`}/>
             </div>
         </>)
     };

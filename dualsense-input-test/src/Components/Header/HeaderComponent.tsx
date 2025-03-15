@@ -14,7 +14,7 @@ const HeaderComponent = () => {
         return(<>
             {verified ?
             ( <p className={Styles.VerificationAppearance}>✅ {controllerID}</p> ):
-            ( <p className={Styles.VerificationAppearance}>⚠️ {controllerID} is not verified and might cause unexpected behaviours</p> )}
+            ( <p className={Styles.VerificationAppearance}>⚠️ {controllerID} is not supported and might cause unexpected behaviours</p> )}
         </>)
     };
 
@@ -27,7 +27,7 @@ const HeaderComponent = () => {
                 )
             default:
                 return(
-                    <p className={Styles.VerificationAppearance}>⚠️ {detectedBrowser?.name} is not verified and may cause unexpected behaviours</p>
+                    <p className={Styles.VerificationAppearance}>⚠️ {detectedBrowser?.name} is not supported and may cause unexpected behaviours</p>
                 )
         }
 

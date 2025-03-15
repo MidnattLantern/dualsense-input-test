@@ -1,3 +1,4 @@
+/* Foundation */
 .ComponentFrame {
     z-index: -9;
     width: 700px;
@@ -8,190 +9,74 @@
     align-items: center;
     background-color: rgba(25, 23, 27, 0.5);
     backdrop-filter: blur(10px);
-    box-shadow: inset 0px 5px 25px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.75);
+    border: 2px solid rgba(25, 23, 27, 1);
     margin-left: auto;
     margin-right: auto;
 }
-
 .DualSenseInputTestFrame {
     position: relative; /* anyhting but "static" works */
     width: 500px;
     height: 500px;
     display: flex;
-
 }
+/* ---^--- */
 
-.BodyFrontAppearance {
-    z-index: 1;
-    fill: var(--dualsense-body);
-    position: absolute;
-    left: 0;
-    top: 0;
-}
-.BodyShoulderAppearance{
-    z-index: 1;
-    fill: var(--dualsense-body);
-    position: absolute;
-    left: 0;
-    top: 0;
-}
-
-/* Directional buttons */
-.AlignDirectionalButtons {
+/* Align statements */
+.AlignButton {
     position: absolute;
     transition: all 0.1s ease;
 }
-    .DirectionLeftAppearance {
-        fill: var(--dualsense-body);
-        position: absolute;
-    }
-    .DirectionDownAppearance {
-        fill: var(--dualsense-body);
-        position: absolute;
-    }
-    .DirectionRightAppearance {
-        fill: var(--dualsense-body);
-        position: absolute;
-    }
-    .DirectionUpAppearance {
-        fill: var(--dualsense-body);
-        position: absolute;
-    }
-/* ---^--- */
-
-/* Action Buttons */
-.AlignActionButtons {
-    position: absolute;
-    transform: all 0.1s ease;
-}
-    .SquareAppearance {
-        fill: var(--dualsense-body);
-        position: absolute;
-    }
-    .SquareActive {
-        top: 1.5px;
-        fill: var(--theme);
-        transition: fill 0.15s ease;
-    }
-    .CrossAppearance {
-        fill: var(--dualsense-body);
-        position: absolute;
-    }
-    .CrossActive {
-        top: 1.5px;
-        fill: var(--theme);
-        transition: fill 0.15s ease;
-    }
-    .CircleAppearance {
-        fill: var(--dualsense-body);
-        position: absolute;
-    }
-    .CircleActive {
-        top: 1.5px;
-        fill: var(--theme);
-        transition: fill 0.15s ease;
-    }
-    .TriangleAppearance {
-        fill: var(--dualsense-body);
-        position: absolute;
-    }
-    .TriangleActive {
-        top: 1.5px;
-        fill: var(--theme);
-        transition: fill 0.15s ease;
-    }
-/* ---^--- */
-
-.AlignL3Front {
+.AlignLR3 {
     position: absolute;
     transition: all 0.5s ease;
     z-index: 2;
 }
-    .L3FrontAppearance {
-        fill: none;
-        position: absolute;
-    }
-
-.AlignR3Front {
-    position: absolute;
-    transition: all 0.5s ease;
-    z-index: 2;
-}
-    .R3FrontAppearance {
-        fill: none;
-        position: absolute;
-    }
-
-/* Shoulders (front) */
-.AlignL1Front {
-    position: absolute;
-    transition: all 0.1s ease;
-}
-    .L1FrontAppearance {
-        fill: var(--dualsense-body);
-        position: absolute;
-    }
-    .L1FrontActive {
-        fill: var(--theme);
-        transition: fill 0.15s ease;
-        top: 2.5px;
-    }
-.AlignR1Front {
-    position: absolute;
-    transition: all 0.1s ease;
-}
-    .R1FrontAppearance {
-        fill: var(--dualsense-body);
-        position: absolute;
-    }
-    .R1FrontActive {
-        fill: var(--theme);
-        transition: fill 0.15s ease;
-        top: 2.5px;
-    }
-/* ---^--- */
-
-/* Shoulders (shoulders) */
 .AlignShoulderButton {
     position: absolute;
     transition: all 0.1s ease;
     width: 500px;
     height: 500px;
 }
-    .ShoulderButtonAppearance {
+/* ---^--- */
+
+/* Appearance statements */
+.BodyAppearance {
+    z-index: 1;
+    fill: var(--dualsense-body);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.ButtonAppearance {
+    fill: var(--dualsense-body);
+    position: absolute;
+}
+.LR3Appearance {
+    fill: none;
+    position: absolute;
+}
+.ShoulderButtonAppearance {
     fill: var(--dualsense-body);
     position: relative;
     transition: all 0.1s ease;
-    }
-    .ShoulderButtonActive {
-        fill: var(--theme);
-        transition: fill 0.15s ease;
-    }
+}
 /* ---^--- */
 
-/* low level */
-.AlignShare{
-    position: absolute;
-    transition: all 0.1s ease;
-}
-    .ShareAppearance {
-        fill: var(--dualsense-body);
-        position: absolute;
-    }
-.AlignOptions{
-    position: absolute;
-    transition: all 0.1s ease;
-}
-    .OptionsAppearance {
-        fill: var(--dualsense-body);
-        position: absolute;
-    }
-/* ---^--- */
-
-/* other */
+/* Active statements */
 .Active {
     fill: var(--theme);
     transition: fill 0.15s ease;
+}
+.ActionActive {
+    top: 1.5px;
+    fill: var(--theme);
+    transition: fill 0.15s ease;
+}
+.LR1FrontActive {
+    fill: var(--theme);
+    transition: fill 0.15s ease;
+    top: 2.5px;
 }
 /* ---^--- */
 
@@ -207,7 +92,6 @@
     margin-left: auto;
     margin-right: auto;
 }
-
 .Cube {
     position: absolute;
     width: 500px;
@@ -216,7 +100,10 @@
     text-align: center;
     line-height: 100px;
 }
-
-.Front  { transform: translateZ(100px); }
-.Top    { transform: rotateX(90deg) translateZ(150px); }
+.Front {
+    transform: translateZ(100px);
+}
+.Top {
+    transform: rotateX(90deg) translateZ(150px);
+}
 /* ---^--- */
